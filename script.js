@@ -67,7 +67,9 @@ var students = [
     { usn: "LE", name: "D S VISHESH DHYAN" },
     { usn: "LE", name: "DARSHAN B" },
     { usn: "LE", name: "DARSHAN C" },
-    { usn: "LE", name: "DARSHAN CHIKANNA" }
+    { usn: "LE", name: "DARSHAN CHIKANNA" },
+    { usn: "COB", name: "V PRAJWAL" },
+    { usn: "COB", name: "MEGHA" }
 ];
 
 function updateTime() {
@@ -172,6 +174,8 @@ function createStudentList() {
         var usnDisplay;
         if (student.usn === "LE") {
             usnDisplay = `<span class="bold">${student.usn}</span>`; // Bold for LE students
+        } else if (student.usn === "COB") {
+            usnDisplay = `<span class="bold">${student.usn}</span>`; // Bold for COB students
         } else {
             // If the current usnCounter matches the skipped number, increment it
             if (usnCounter === skipNumber) {
@@ -182,7 +186,6 @@ function createStudentList() {
         }
 
         // Create the list item HTML
-        // Inside createStudentList() function, update this part:
         listItem.innerHTML = `
             <span class="student-info">${usnDisplay} - ${student.name}</span>
             <input type="checkbox" id="rollno${index + 1}" data-rollno="${index + 1}" checked>
